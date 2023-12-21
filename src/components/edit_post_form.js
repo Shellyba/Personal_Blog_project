@@ -14,7 +14,7 @@ export function EditPost() {
             defaultValues:
                 originalPost
         });
-jjjj
+
 
     const navigate = useNavigate()
 
