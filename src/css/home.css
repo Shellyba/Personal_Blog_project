@@ -1,0 +1,50 @@
+.hero{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hero .content-container {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 4em;
+    padding-bottom: 3em;
+}
+.hero .title {
+    text-align: center;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 4em;
+    font-style: normal;
+    font-weight: 900;
+    /*line-height: 120%; !* 91.2px *!*/
+    letter-spacing: -2.28px;
+    background: linear-gradient(97deg, #860A35 4.8%, #DC8686 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero .subtitle {
+    color: var(--gray-600, #475467);
+    text-align: center;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 1.4em;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; /* 42px */
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.content {
+    background-color: #F2F4F7;
+}
+.content .content-container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.home-img {
+    width: 60%;
+    margin: 3rem auto;
+
+}

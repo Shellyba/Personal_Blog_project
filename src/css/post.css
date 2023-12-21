@@ -1,0 +1,20 @@
+.post-date {
+    color: #667085;
+    font-family: 'Hanken Grotesk', sans-serif;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 15.6px */
+    text-transform: uppercase;
+    /*margin-bottom: 8em;*/
+}
+
+.post-img{
+    width: 100%;
+    margin: 5em auto;
+}
+
+.d-flex{
+    margin: 10rem auto;
+}

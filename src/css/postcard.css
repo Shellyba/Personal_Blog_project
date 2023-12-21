@@ -1,0 +1,91 @@
+.article-card {
+    border-radius: 20px;
+    background-color: #FFF;
+    margin: 2em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 1em;
+    border: 1px solid #d1d2d7;
+    width: 100%;
+    position: relative;
+}
+.card-content {
+    text-align: left;
+    min-width: 60%;
+}
+.card-date {
+    color: #667085;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 15.6px */
+    margin-bottom: 2em;
+}
+.card-title {
+    color: #1D2939;
+    font-family: 'Raleway', serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 33.8px */
+    margin-bottom: 0.5em;
+    text-decoration: none;
+
+}
+.card-subtitle {
+    color: #475467;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; /* 27px */
+
+}
+
+.card-image{
+    width: 300px;
+}
+
+.removeButton{
+    display: flex;
+    padding: 5px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    border: 1px solid #ba1b52;
+    background: white;
+    /*color: red;*/
+    color: #ba1b52;
+    font-family: 'Raleway', serif;
+    font-weight: 400;
+}
+
+.removeButton:hover{
+    color: white;
+    background-color: #ba1b52;
+    border: 1px solid  #ba1b52;
+}
+
+.editButton{
+    padding: 5px 10px;
+    gap: 2px;
+    border-radius: 20px;
+    border: 1px solid #ba1b52;
+    background: white;
+    color: #ba1b52;
+    font-family: 'Raleway', serif;
+    font-weight: 400;
+    position: absolute;
+    right: -100px;
+}
+
+.editButton:hover{
+    color: white;
+    background-color: #ba1b52;
+    border: 1px solid  #ba1b52;
+}
