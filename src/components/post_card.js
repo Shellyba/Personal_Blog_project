@@ -9,14 +9,14 @@ export function PostCard({postItem}) {
     const {removePost} = useContext(PostsContext);
 
     return (
-        <div className="article-card">
+        <div className="article-card flex-md-row flex-column">
             <div className="card-content">
                 <div className="card-date"> {postItem.date && postItem.date.split('-').reverse().join('-')}</div>
                 <Link className="card-title" to={`/posts/${postItem.id}`}>{postItem.title}</Link>
                 <div className="card-subtitle"> {postItem.body}</div>
             </div>
             <div className="card-image">
-                <img className="card-image" src="./Pictures/dogs1.jpeg" alt="picture"/>
+                <img src="./Pictures/dogs1.jpeg" alt="picture"/>
             </div>
             {user &&
                 <>
