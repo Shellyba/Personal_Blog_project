@@ -13,15 +13,15 @@ export function Admin(){
 
     return (
         <div className="page">
-            <div className="hero-header">
-                <div className="content-container">
-                    <p className="title" >Admin</p>
-                    {!user ? <p className="subtitle">You must sign in to add post</p>
-                        : <div><p> Here is the form to update a post:</p>
-                            <PostForm /></div>
-                    }
+                <div className="hero-header">
+                    <div className="content-container">
+                        <p className="title" >Admin</p>
+                        {!user ? <p className="subtitle">You must sign in to add a post</p>
+                            : <div><p> Here is the form to update a post:</p>
+                                <PostForm /></div>
+                        }
+                    </div>
                 </div>
-            </div>
         </div>
 
     )

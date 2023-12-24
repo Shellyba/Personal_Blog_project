@@ -1,12 +1,8 @@
-import {PostList} from "../components/post_list";
-import {Link, useOutletContext} from "react-router-dom";
-
-
-import "../css/home.css";
-import "../css/postcard.css";
 import {useContext} from "react";
 import {PostsContext} from "../providers/posts-provider";
 import {PostCard} from "../components/post_card";
+import "../css/home.css";
+import "../css/postcard.css";
 
 
 export function Home(){
@@ -32,7 +28,6 @@ export function Home(){
                     <div className="section" id="daily-digest">
                         <div className="section-header">
                             <div className="section-title">Latest posts</div>
-                            {/*<div className="section-view-all">View All</div>*/}
                         </div>
                         <div>
                             {latestPosts.map((post) => <PostCard postItem = {post}/>)}

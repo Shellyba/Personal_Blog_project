@@ -36,7 +36,6 @@
     font-style: normal;
     font-weight: 700;
     color: #860A35;
-    line-height: 40px; /* 150% */
     margin-right: 1em;
 }
 
@@ -63,4 +62,23 @@
 
 .user-welcome{
     display: inline-flex;
+    align-items: center;
 }
+
+
+.sign-in-button {
+    display: flex;
+    padding: 5px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid #1D2939;
+    background: #040303;
+    color: #fff;
+    font-family: 'Raleway', serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+

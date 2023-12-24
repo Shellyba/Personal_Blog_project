@@ -24,7 +24,7 @@ export function Header() {
                         {user && <li><Link className='nav-link' to="/admin">Admin</Link></li>}
                         {user ? <div className="user-welcome">
                                 <span className="signed-in">Welcome {user.userName}</span>
-                                <button className="sign-out-button" onClick={signOut}>Sign out</button>
+                                <button className="sign-in-button" onClick={signOut}>Sign out</button>
                                 </div>
                              : (<button className="sign-in-button" onClick={signIn}>Sign in</button>)}
                     </nav>

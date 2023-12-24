@@ -10,11 +10,13 @@ import {Outlet} from "react-router-dom";
 export function App() {
 
     return (
-    <div className="page">
-        <Header/>
-        <Outlet />
-        <Footer />
-    </div>
+
+        <div className="page">
+            {/*<ScrollRestoration />*/}
+            <Header/>
+            <Outlet />
+            <Footer />
+        </div>
   );
 }
 

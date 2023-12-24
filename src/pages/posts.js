@@ -7,6 +7,8 @@ import "../css/page.css";
 import {PostsContext} from "../providers/posts-provider";
 import {PostCard} from "../components/post_card";
 
+
+
 export function Posts() {
 
     const {postsArray} = useContext(PostsContext);
@@ -16,18 +18,19 @@ export function Posts() {
     const handleUserInput = (event) => {
         setSearchWord(event.target.value);
     }
-    // const {title, body} = event.target.elements;
-    // const {picture} = URL.createObjectURL(event.target.files[0]);
+
 
     return (
 
         <div className="page">
-            <div className="hero-header">
-                <div className="content-container">
-                    <p className="title" >Posts</p>
-                    <form className="search-bar">
-                        <input onChange={handleUserInput} type="text" placeholder=" Search post" className="form-control"/>
-                    </form>
+            <div  className="hero">
+                <div className="hero-header">
+                    <div className="content-container">
+                        <p className="title" >Posts</p>
+                        <form className="search-bar">
+                            <input onChange={handleUserInput} type="text" placeholder=" Search post" className="form-control"/>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div className="content">

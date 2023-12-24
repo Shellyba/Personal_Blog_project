@@ -6,25 +6,40 @@ export function PostProvider({children}){
 
     const [postsArray, setPostsArray] = useState([]);
 
-    function generateRandomDate(from, to) {
-        return new Date(
-            from.getTime() +
-            Math.random() * (to.getTime() - from.getTime()),
-        );
-    }
+    const getDatesArray = (startDate, endDate) => {
+        let dates = [];
+        // let currentDate = new Date(startDate);
+        while (startDate <= endDate) {
+            dates.push(new Date(startDate));
+            startDate.setDate(startDate.getDate() + 10);
+        }
+        return dates;
+    };
 
+    const datesArray = getDatesArray(new Date(2023, 5, 1), new Date())
+
+    const categoriesArray = ["Brain", "Spinal cord", "Vestibular", "Epilepsy", "Neurodegenerative", "Inflammation"]
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
     const addPost = (newPost) =>
         setPostsArray([newPost,...postsArray])
+
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(response => response.json())
             .then(json => {
-                const newPostsArr = json.map(post =>
-                    ({...post, date : generateRandomDate(new Date(2023, 1, 1), new Date()).toJSON().split('T')[0]}));
-                    setPostsArray(newPostsArr)
+                const shortPostsArr = json.slice(0, 21);
+                for(let i=0; i<datesArray.length; i++) {
+                    shortPostsArr[i].date = datesArray[i].toJSON().split('T')[0];
+                    shortPostsArr[i].category = categoriesArray[getRandomInt(categoriesArray.length)]
+                }
+                setPostsArray(shortPostsArr.reverse());
             });
     }, []);
+
+    console.log(postsArray)
 
     const removePost = (postTitle) => {
         setPostsArray(postsAfterDel => {

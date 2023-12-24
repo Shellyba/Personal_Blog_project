@@ -3,6 +3,7 @@ import "../css/postcard.css";
 import {useContext} from "react";
 import {UserContext} from "../providers/user-provider";
 import {PostsContext} from "../providers/posts-provider";
+import {ScrollRestoration} from "react-router-dom";
 
 export function PostCard({postItem}) {
     const {user} = useContext(UserContext);
@@ -10,18 +11,19 @@ export function PostCard({postItem}) {
 
     return (
         <div className="article-card">
+            <ScrollRestoration />
             <div className="card-content">
                 <div className="card-date"> {postItem.date && postItem.date.split('-').reverse().join('-')}</div>
                 <Link className="card-title" to={`/posts/${postItem.id}`}>{postItem.title}</Link>
                 <div className="card-subtitle"> {postItem.body}</div>
             </div>
             <div className="card-image">
-                <img className="card-image" src="./Pictures/dogs1.jpeg" alt="picture"/>
+                <img className="card-image" src="../Pictures/dogs1.jpeg" alt="picture"/>
             </div>
             {user &&
                 <>
                     <button className="removeButton" onClick={() => removePost(postItem.title)}> <i className="bi bi-trash"></i> </button>
-                    <Link className="editButton"  to={`/edit-post/${postItem.id}`}><i className="bi bi-pencil"></i></Link>
+                    <Link className="editButton" to={`/edit-post/${postItem.id}`}><i className="bi bi-pencil"></i></Link>
                 </>
             }
         </div>
