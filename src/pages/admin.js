@@ -10,18 +10,26 @@ the PostForm component to display the adding post form. */
 export function Admin() {
     const {user} = useContext(UserContext);
 
-    return (
-        <div className="page">
-            <div className="hero-header">
-                <div className="content-container">
-                    <p className="title">Admin</p>
-                    {!user ? <p className="subtitle">You must sign in to add a post</p> :
-                        <div><p> Here is the form to update a post:</p>
-                            <PostForm/>
-                        </div>}
+    return (<div className="page">
+            <div className="hero">
+                <div className="hero-header">
+                    <div className="content-container">
+                        <p className="title">Admin</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+            <div className="content">
+                <div className="content-container">
+                    {!user ? <p className="subtitle">You must sign in to add a post</p> : <div>
+                        <PostForm/>
+                    </div>}
+                    <div className="section" id="daily-digest">
+                        <div className="section-header"></div>
+                    </div>
+                </div>
+            </div>
+        </div>);
 }
+
+
 

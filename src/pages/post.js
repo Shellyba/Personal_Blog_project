@@ -19,10 +19,11 @@ export function Post() {
 
     return (
         <div className="page">
-            {postToDisplay ? (<div>
-                <div className="hero-header">
+            {postToDisplay ? (
+                <div>
+                  <div className="hero-header">
                     <div className="content-container">
-                        <p className="title"> {postToDisplay.title}</p>
+                        <p className="title post-title"> {postToDisplay.title}</p>
                         <p className="post-date"> {postToDisplay.date.split('-').reverse().join('-')}</p>
                         <img className="post-img" src="../Pictures/dogs1.jpeg" alt="picture"/>
                         <p className="subtitle"> {postToDisplay.body}</p>
@@ -37,7 +38,7 @@ export function Post() {
                             <div>
                                 {postsArray
                                     .filter(post => post.category === postToDisplay.category)
-                                    .map(post => <PostCard postItem={post}/>)};
+                                    .map(post => <PostCard postItem={post}/>)}
                             </div>
                         </div>
                     </div>

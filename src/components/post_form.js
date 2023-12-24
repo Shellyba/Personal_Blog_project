@@ -3,6 +3,7 @@ import {PostsContext} from "../providers/posts-provider";
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 import {v4 as uuidv4} from 'uuid';
+import "../css/forms.css";
 
 
 // This component displays a form to add a post. I use this component in the Admin component.
@@ -25,41 +26,49 @@ export function PostForm({addPostFunc}) {
 
     // Using the useForm hook function I added validations to the add post form.
     return (
-        <div>
+        <div className="my-form page">
             <form onSubmit={handleSubmit(handleNewPostSubmit)}>
-                <lable htmlFor="title">Post title</lable>
-                <input type="text" {...register("title", {
-                    required: "The title is required",
-                    minLength: {value: 3, message: "Minimum length is 3 chars"},
-                    pattern: {value: /^[A-Za-z\d']+$/i, message: "Title must include letters and numbers"}
-                })} placeholder="Post title"/>
-                <p style={{color: 'red'}}>{errors.title?.message}</p>
-                <lable htmlFor="content">Post content</lable>
-                <textarea {...register("body", {required: "The content is required"})}
-                          placeholder="Post body"></textarea><br/>
-                <p style={{color: 'red'}}>{errors.body?.message}</p>
-                <label htmlFor="category">Choose category:</label>
-                <select {...register("category")}>
-                    <option value="Brain">Brain</option>
-                    <option value="Spinal cord">Spinal cord</option>
-                    <option value="Vestibular">Vestibular</option>
-                    <option value="Epilepsy">Epilepsy</option>
-                    <option value="Neurodegenerative">Neurodegenerative</option>
-                    <option value="Inflammation">Inflammation</option>
-                </select><br/>
-                <lable htmlFor="date">Post date</lable>
-                <input type="date" {...register("date", {
-                    required: "Please enter the post date", validate: date => {
-                        const currDate = new Date().toJSON().split('T')[0];
-                        if (date < currDate) {
-                            return "Enter today's date or onwards";
+                <div className="mb-3">
+                    <lable htmlFor="title" className="form-label">Post title:</lable>
+                    <input type="text" className="form-control" {...register("title", {
+                        required: "The title is required",
+                        minLength: {value: 3, message: "Minimum length is 3 chars"},
+                        pattern: {value: /^[A-Za-z\d']+$/i, message: "Title must include letters and numbers"}
+                    })} placeholder="Post title"/>
+                    <p style={{color: 'red'}}>{errors.title?.message}</p>
+                </div>
+                <div className="mb-3">
+                    <lable htmlFor="content" className="form-label">Post content:</lable>
+                    <textarea className="form-control"{...register("body", {required: "The content is required"})}
+                              placeholder="Post content"></textarea>
+                    <p style={{color: 'red'}}>{errors.body?.message}</p>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="category" className="form-label">Choose category:</label>
+                    <select className="form-select"{...register("category")}>
+                        <option value="Brain">Brain</option>
+                        <option value="Spinal cord">Spinal cord</option>
+                        <option value="Vestibular">Vestibular</option>
+                        <option value="Epilepsy">Epilepsy</option>
+                        <option value="Neurodegenerative">Neurodegenerative</option>
+                        <option value="Inflammation">Inflammation</option>
+                    </select>
+                </div>
+                <div className="mb-3">
+                    <lable htmlFor="date" className="form-label">Post date:</lable>
+                    <input type="date" className="form-control" {...register("date", {
+                        required: "Please enter the post date", validate: date => {
+                            const currDate = new Date().toJSON().split('T')[0]
+                            if (date < currDate) {
+                                return "Enter today's date or onwards";
+                            }
                         }
-                    }
-                })}/><br/>
-                {errors.date && <span style={{color: 'red'}}>{errors.date.message}</span>};
-
-                <br/>
-                <button>Add post</button>
+                    })}/>
+                    {errors.date && <span style={{color: 'red'}}>{errors.date.message}</span>}
+                </div>
+                <div className="button-div">
+                    <button className="form-button">Add post</button>
+                </div>
             </form>
         </div>
     );

@@ -32,7 +32,7 @@ export function Posts() {
                 <div className="content-container">
                     {postsArray
                         .filter(post => post.title.toLowerCase().includes(searchWord.toLowerCase()))
-                        .map((post) => <PostCard postItem={post}/>)};
+                        .map((post) => <PostCard postItem={post}/>)}
                     <div className="section" id="daily-digest">
                         <div className="section-header"></div>
                     </div>

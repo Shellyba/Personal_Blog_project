@@ -14,7 +14,7 @@ export function PostCard({postItem}) {
     const {removePost} = useContext(PostsContext);
 
     return (
-        <div className="article-card">
+        <div className="article-card flex-md-row flex-column">
             <ScrollRestoration/>
             <div className="card-content">
                 <div className="card-date"> {postItem.date && postItem.date.split('-').reverse().join('-')}</div>

@@ -12,10 +12,9 @@ export function Header() {
 
     return (
         <div className="header">
-            <div className="header-container">
+            <div className="header-container flex-md-row">
                 <div className="logo">
-                    <button className="logo-button"><Link className='nav-link' to="/"><img src="./Pictures/logo2.png"/></Link>
-                    </button>
+                    <Link className='nav-link logo-button' to="/"><img src="./Pictures/logo2.png"/></Link>
                 </div>
                 <div className="navigation-wrapper">
                     <nav className="navigation">

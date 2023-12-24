@@ -1,16 +1,19 @@
 .page {
     margin: 0;
 }
-.hero{
+
+.hero {
+    height: 20em;
     display: flex;
-    height: 50%;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-header .content-container {
     width: 60%;
     margin: 0 auto;
-    /*padding: 2em 0;*/
 }
+
 .hero-header .title {
     text-align: center;
     font-family: 'Hanken Grotesk', sans-serif;
@@ -23,13 +26,14 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
- .subtitle {
+
+.subtitle {
     color: var(--gray-600, #475467);
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.4em;
     font-style: normal;
     font-weight: 300;
-    line-height: 150%; /* 42px */
+    line-height: 150%;
     margin-bottom: 2em;
     width: 100%;
     text-align: center;
@@ -42,32 +46,30 @@
     align-items: center;
     padding: 5em 0;
 }
-.content .content-container {
 
-    /*justify-items: center;*/
+.content .content-container {
     width: 60%;
     margin: 0 auto;
-    /*padding: 1em 0;*/
     background-color: #F2F4F7;
 }
 
-.section {
-    /*margin-bottom: 7em;*/
-}
+
 .section-header {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .section-header .section-title {
     color: #1D2939;
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 26px;
     font-style: normal;
     font-weight: 800;
-    line-height: 130%; /* 33.8px */
+    line-height: 130%;
 }
+
 .section-header .section-view-all {
     border-radius: 8px;
     border: 1px solid #E4E7EC;
@@ -78,7 +80,7 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
-    line-height: 20px; /* 142.857% */
+    line-height: 20px;
     padding: 8px 12px;
 }
 
@@ -90,5 +92,4 @@
     justify-content: center;
     float: left;
     width: 100%;
-    margin-bottom: 100px;
 }

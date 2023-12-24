@@ -11,45 +11,49 @@
     width: 100%;
     position: relative;
 }
+
 .card-content {
     text-align: left;
     min-width: 60%;
 }
+
 .card-date {
     color: #667085;
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: 120%; /* 15.6px */
+    line-height: 120%;
     margin-bottom: 2em;
 }
+
 .card-title {
     color: #1D2939;
     font-family: 'Raleway', serif;
     font-size: 26px;
     font-style: normal;
     font-weight: 600;
-    line-height: 130%; /* 33.8px */
+    line-height: 130%;
     margin-bottom: 0.5em;
     text-decoration: none;
 
 }
+
 .card-subtitle {
     color: #475467;
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 300;
-    line-height: 150%; /* 27px */
+    line-height: 150%;
 
 }
 
-.card-image{
+.card-image img {
     width: 300px;
 }
 
-.removeButton{
+.removeButton {
     display: flex;
     padding: 5px 10px;
     flex-direction: column;
@@ -59,19 +63,18 @@
     border-radius: 20px;
     border: 1px solid #ba1b52;
     background: white;
-    /*color: red;*/
     color: #ba1b52;
     font-family: 'Raleway', serif;
     font-weight: 400;
 }
 
-.removeButton:hover{
+.removeButton:hover {
     color: white;
     background-color: #ba1b52;
-    border: 1px solid  #ba1b52;
+    border: 1px solid #ba1b52;
 }
 
-.editButton{
+.editButton {
     padding: 5px 10px;
     gap: 2px;
     border-radius: 20px;
@@ -84,8 +87,8 @@
     right: -100px;
 }
 
-.editButton:hover{
+.editButton:hover {
     color: white;
     background-color: #ba1b52;
-    border: 1px solid  #ba1b52;
+    border: 1px solid #ba1b52;
 }

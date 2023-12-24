@@ -4,6 +4,7 @@ import {useForm} from "react-hook-form";
 import {useNavigate, useParams} from "react-router-dom";
 import {UserContext} from "../providers/user-provider";
 import "../css/page.css";
+import "../css/forms.css";
 
 
 /* This component displays a form to edit a post.
@@ -39,47 +40,65 @@ export function EditPost() {
     }
 
     // Using the useForm hook function I added validations to the edit form.
-    return (
-        <div className="page">
+    return (<div className="page">
+        <div className="hero">
             <div className="hero-header">
                 <div className="content-container">
                     <p className="title">Edit post</p>
-                    {!user ? (<p className="subtitle">You must sign in to edit a post</p>) :
-                        <form onSubmit={handleSubmit(handelEditPost)}>
-                            <lable htmlFor="title">Post title</lable>
-                            <input type="text" {...register("title", {
+                </div>
+            </div>
+        </div>
+        <div className="content">
+            <div className="content-container">
+                {!user ? (<p className="subtitle">You must sign in to edit a post</p>) :
+                    <form onSubmit={handleSubmit(handelEditPost)}>
+                        <div className="mb-3">
+                            <lable htmlFor="title" className="form-label">Post title</lable>
+                            <input type="text" className="form-control"{...register("title", {
                                 required: "The title is required",
                                 minLength: {value: 3, message: "Minimum length is 3 chars"},
-                                pattern: {value: /^[A-Za-z\d']+$/i, message: "Title must include letters and numbers"}
                             })} placeholder="Post title"/>
                             <p style={{color: 'red'}}>{errors.title?.message}</p>
-                            <lable htmlFor="content">Post content</lable>
-                            <textarea {...register("body", {required: "The content is required"})}
-                                      placeholder="Post body"></textarea><br/>
+                        </div>
+                        <div className="mb-3">
+                            <lable htmlFor="content" className="form-label" className="form-label">Post content
+                            </lable>
+                            <textarea
+                                className="form-control" {...register("body", {required: "The content is required"})}
+                                placeholder="Post body"></textarea>
                             <p style={{color: 'red'}}>{errors.body?.message}</p>
-                            <label htmlFor="category">Choose category:</label>
-                            <select {...register("category")}>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="category" className="form-label">Choose category:</label>
+                            <select className="form-select"{...register("category")}>
                                 <option value="Brain">Brain</option>
                                 <option value="Spinal cord">Spinal cord</option>
                                 <option value="Vestibular">Vestibular</option>
                                 <option value="Epilepsy">Epilepsy</option>
                                 <option value="Neurodegenerative">Neurodegenerative</option>
                                 <option value="Inflammation">Inflammation</option>
-                            </select><br/>
+                            </select>
+                        </div>
+                        <div className="mb-3">
                             <lable htmlFor="date">Post date</lable>
-                            <input type="date" {...register("date", {
+                            <input type="date" className="form-control" {...register("date", {
                                 required: "Please enter the post date",
-                            })}/><br/>
-                            {errors.date && <span style={{color: 'red'}}>{errors.date.message}</span>};
-                            <br/>
-                            <button>Edit post</button>
-                        </form>}
+                            })}/>
+                            {errors.date && <span style={{color: 'red'}}>{errors.date.message}</span>}
+                        </div>
+                        <div className="button-div">
+                            <button className="form-button">Edit post</button>
+                        </div>
+                    </form>}
+                <div className="section" id="daily-digest">
+                    <div className="section-header"></div>
                 </div>
-
             </div>
         </div>
-    );
+    </div>);
 }
+
+
 
 
 

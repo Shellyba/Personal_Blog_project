@@ -16,7 +16,7 @@ export function Home() {
 
     return (
         <div className="page">
-            <div className="hero">
+            <div className="home-hero">
                 <div className="content-container">
                     <h1 className="title">The NeuroVet Blog </h1>
                     <p className="subtitle"> Whether you're a dedicated pet parent seeking insights into your furry
@@ -34,7 +34,7 @@ export function Home() {
                             <div className="section-title">Latest posts</div>
                         </div>
                         <div>
-                            {latestPosts.map((post) => <PostCard postItem={post}/>)};
+                            {latestPosts.map((post) => <PostCard postItem={post}/>)}
                         </div>
 
                     </div>

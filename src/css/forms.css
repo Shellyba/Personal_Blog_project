@@ -1,0 +1,34 @@
+.my-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 20px;
+    border: 1px solid #860A35;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+
+.form-control {
+    border: 1px solid #860A35;
+}
+
+.form-select {
+    border: 1px solid #860A35;
+}
+
+.form-button {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid white;
+    background: #89103a;
+    color: #fff;
+    font-family: 'Raleway', serif;
+    font-weight: 400;
+    font-size: 14px;
+    border-color: #040303;
+}
+
+.button-div {
+    text-align: center;
+    margin-top: 30px;
+}
