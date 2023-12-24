@@ -1,19 +1,21 @@
 import {Link} from "react-router-dom";
-import "../css/header.css";
 import {useContext} from "react";
-import {PostsContext} from "../providers/posts-provider";
 import {UserContext} from "../providers/user-provider";
+import "../css/header.css";
 
+// Creating the links to the blog pages using the <Link> tag from react router lib.
+// This tag enables the routing between pages without page refresh.
+// In addition, I used the hook function useContext to get global information on the user (if sign-in/out)
+// to display the Admin link.
 export function Header() {
-
     const {user, signIn, signOut} = useContext(UserContext);
 
     return (
-
         <div className="header">
             <div className="header-container">
                 <div className="logo">
-                  <button className="logo-button"><Link className='nav-link' to="/"><img src="./Pictures/logo2.png"/></Link></button>
+                    <button className="logo-button"><Link className='nav-link' to="/"><img src="./Pictures/logo2.png"/></Link>
+                    </button>
                 </div>
                 <div className="navigation-wrapper">
                     <nav className="navigation">
@@ -25,13 +27,14 @@ export function Header() {
                         {user ? <div className="user-welcome">
                                 <span className="signed-in">Welcome {user.userName}</span>
                                 <button className="sign-in-button" onClick={signOut}>Sign out</button>
-                                </div>
-                             : (<button className="sign-in-button" onClick={signIn}>Sign in</button>)}
+                            </div>
+                            : (<button className="sign-in-button" onClick={signIn}>Sign in</button>)}
                     </nav>
                 </div>
             </div>
         </div>
-    )}
+    );
+}
 
 
 

@@ -1,22 +1,19 @@
-// import './App.css';
-
 import {Header} from "./components/header";
 import {Footer} from "./components/footer";
-import {useEffect, useState} from "react";
 import {Outlet} from "react-router-dom";
 
 
+// The outlet component includes all blog's pages.
+// The Header and Footer components will be shown in each page of the blog.
 
 export function App() {
 
     return (
-
-        <div className="page">
-            {/*<ScrollRestoration />*/}
+        <div>
             <Header/>
-            <Outlet />
-            <Footer />
+            <Outlet/>
+            <Footer/>
         </div>
-  );
+    );
 }
 
